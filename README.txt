@@ -1,0 +1,1 @@
+These templates are now redundant and should longer be updated or used for the creation of new widgets.  Please use the bespoke environment instead.

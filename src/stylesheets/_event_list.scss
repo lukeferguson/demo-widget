@@ -1,0 +1,199 @@
+#bb-event-list, div[bb-events] {
+
+  .date-chooser-heading {
+    margin-bottom: 30px;
+  }
+
+  .date-chooser {
+    margin: 0 0 20px 0;
+  }
+
+  .date-list-item {
+    display: inline-block;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    .btn-secondary {
+      width: 120px;
+    }
+    .btn-secondary.selected {
+      @extend .btn-primary;
+    }
+  }
+
+  .event-list-heading {
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .event-datetime {
+    text-transform: uppercase;
+    
+    .event-date {
+      font-size: 0.8em;
+      display: block;
+    }
+    .event-time {
+      font-size: 1.7em;
+    }
+  }
+
+  .bb-month-picker {
+    @include make-row();
+    margin-top: 10px;
+    margin-bottom: 20px;
+    // .bb-month-name {
+    //   @extend .panel-heading;
+    // }
+    .bb-month-nav {
+      //@include make-sm-column(2)
+    }
+    .bb-month {
+      @include make-sm-column(4);
+      table {
+        //width:90%;
+        margin: 0 auto;
+      }
+    }
+    td {
+      
+      text-align: center;
+      padding: 1px;
+      height: 36px;
+      width: 36px;
+      font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+      //color:#EEE;
+      //background-color: #FFF;
+
+      // &.thisMonth {
+      //  // border: 1px solid #DDD;
+
+      //   cursor: default;
+      //   opacity: 1;
+
+      &.past, &.disabled {
+        color: #AAA;
+      }
+
+      &.available {
+        cursor: pointer;
+        color: #FFF;
+
+        .circle {
+          background-color: #337ab7;
+          border-radius: 50%;
+          padding: 6px 5px;
+          height: 30px;
+          width: 30px;
+          text-align: center;
+          border: 1px solid #337ab7;
+          &:hover {
+            background-color: #286090;
+            border: 1px solid #286090;
+          }
+        }
+      }
+      &.selected.available {
+        .circle {
+          background-color: #000;
+          border: 1px solid #000;
+        }
+      }
+      // &.today {
+      //   .circle {
+      //     border: 1px solid #FFF;
+      //     &:hover {
+      //       border: 1px solid #FFF;
+      //     }
+      //   }
+      // }
+
+    }
+    th {
+      margin: 0;
+      text-align: center;
+      &.months {
+        padding-bottom: 10px;
+      }
+      &.days {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .bb-events-list {
+
+    min-height: 400px;
+
+    .ng-enter {
+      -webkit-animation: fadeIn 1s;
+      -moz-animation: fadeIn 1s;
+      -o-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+
+    .ng-leave {
+      -webkit-animation: fadeOutDown 1s;
+      -moz-animation: fadeOutDown 1s;
+      -o-animation: fadeOutDown 1s;
+      animation: fadeOutDown 1s;
+    }
+
+    .panel {
+      border-top: none;
+    }
+
+    .panel-body {
+      padding: 15px 0;
+    }
+
+    .bb-event-card {
+
+      min-height: 140px;
+
+      // span.ng-hide-remove, span.ng-hide-add {
+      //   -webkit-animation: fadeIn 1s;
+      //   -moz-animation: fadeIn 1s;
+      //   -o-animation: fadeIn 1s;
+      //   animation: fadeIn 1s;
+      // }
+    }
+
+    .event-summary-list {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .bb-filters {
+
+    .panel:last-child {
+      margin-bottom: 0;
+    }
+
+    .panel-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .panel-heading {
+      cursor: pointer;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .panel-body {
+      padding-bottom: 0;
+    }
+
+    .date-picker {
+      width: 240px;
+      table {
+        outline: none;
+      }
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+
+  }
+
+}

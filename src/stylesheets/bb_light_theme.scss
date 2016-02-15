@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400);
+
+#bb {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+
+  h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px; margin-bottom: 1.5rem;
+    font-weight: 200;
+  }
+
+  // Panels
+  .panel {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: none;
+    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  .panel-group .panel + .panel {
+    margin-top: 0;
+    border-top: none;
+  }
+
+
+  // Models
+  .modal-title {
+    font-size: 24px;
+  }
+
+  .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .modal-footer {
+    border-top: none;
+    margin-top: 0;
+  }
+
+  .move-booking-container {
+    min-height: 800px;
+  }
+
+}

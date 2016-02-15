@@ -1,0 +1,92 @@
+.form-control, .form-question {
+  @include placeholder(#CCC);
+}
+
+.bb-question-heading {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+  text-align: center;
+  margin-top: 15px;
+}
+
+.privacy-message {
+  text-align: center;
+  margin: 15px 0 20px;
+}
+
+.control-label {
+  padding-right: 0;
+  @media (max-width: $screen-xs-max) {
+    padding-bottom: 5px;
+  }
+}
+
+.booking-summary-item {
+  margin-bottom: 5px;
+  label {
+    padding-right: 0;
+    text-align: right;
+  }
+}
+
+.form-group.check {
+  margin-bottom: 0;
+}
+
+.booking-summary-wrapper {
+  margin-bottom: 30px;
+}
+
+
+label {
+  font-weight: 300;
+}
+
+
+.input-group-btn {
+  .btn-default:hover {
+    border-color: #CCC;
+  }
+  &:last-child > .btn {
+    padding-bottom: 7px;
+  }
+  &:last-child > .btn.btn-lg {
+    padding: 10px 16px;
+  }
+}
+
+.form-inline {
+
+  .input-group .input-group-btn {
+    width: 1%;
+  }
+
+  .form-group {
+    padding-right: 15px;
+    padding-bottom: 15px;
+    @media (max-width: $screen-xs-max) {
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+  }
+
+}
+
+.error-message {
+  color: $state-danger-text;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+  padding-left: 15px;
+  &:before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;    
+    content:"\e107";
+  }
+}

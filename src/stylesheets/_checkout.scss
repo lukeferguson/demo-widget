@@ -1,0 +1,63 @@
+.confirmation-summary-container {
+  margin-bottom: 60px;
+}
+
+.confirmation-header, .confirmation-change-options {
+  text-align: center;
+}
+
+.confirmation-heading {
+  margin-bottom: 15px;
+}
+
+.confirmation-summary {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin: 20px 0 15px 0;
+  padding: 20px 10px 10px 10px;
+}
+
+.confirmation-summary li {
+  margin-bottom: 10px;
+}
+
+.address-item {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.booking-export {
+  padding-bottom: 20px;
+}
+
+.print {
+  padding-top: 5px;
+  text-align: right;
+}
+
+.calendar-export {
+  line-height: 42px;
+}
+
+.calendar-export-label {
+  padding-right: 10px;
+}
+
+.btn-change-booking {
+  margin: 0 auto;
+}
+
+.manage-booking {
+  border-top: 1px solid #999;
+  padding: 20px 0;
+}
+
+.bookings-details {
+  margin-bottom: 300px;
+}
+
+.move-done-msg {
+  color: green;
+}

@@ -1,0 +1,62 @@
+.search-form-wrapper {
+  margin: 10px 0;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+}
+
+.company-map-header{
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+
+.bb-company-block {
+
+  .panel-heading {
+    cursor: pointer;
+  }
+
+  .store-details li {
+    padding-bottom: 5px;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 0;
+  }
+}
+
+.bb-map-block {
+  @media (max-width: 767px) {
+    padding-bottom: 15px;
+  }
+}
+
+
+
+/* GMAP START */
+
+.map-canvas {
+  height: 800px;
+  @media (max-width: 767px) {
+    height: 400px;
+  }
+}
+
+.gmnoprint img {
+  max-width: none; 
+  max-height: none;
+}
+
+.gm-style img { 
+  max-width: none; 
+}
+.gm-style label { 
+  width: auto; 
+  display: inline; 
+}
+
+/* GMAP END */
+

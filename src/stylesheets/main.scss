@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import "bootstrap/bootstrap.scss";
+@import "animate";
+@import "fonts";
+
+$primary-text-color         : #444;
+$primary-background-color   : #eeeeee;
+$primary-border-color       : #666666;
+
+$secondary-text-color       : #666666;
+$secondary-background-color : #fafafa;
+$secondary-border-color     : #d5d5d5;
+
+$placeholder-text           : #a5a5a5;
+
+html {
+  font-size: 10px;
+}
+
+#bb {
+
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 16px; font-size: 1.6rem;
+  color: $primary-text-color;
+  margin: 0;
+
+  // Page Elements
+  @import "page";
+  @import "alerts";
+  @import "form";
+  @import "buttons";
+  @import "lists";
+  @import "helpers";
+  @import "breadcrumbs";
+
+
+  // Partials
+  @import "map";
+  @import "calendar";
+  @import "checkout";
+  @import "service_list";
+  @import "event_group_list";
+  @import "event_list";
+  @import "event";
+  
+}

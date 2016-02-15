@@ -1,0 +1,23 @@
+{
+  "name": "demo-widget",
+  "version": "0.0.0",
+  "authors": [
+    "BookingBug <dev@bookingbug.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bookingbug-angular-public-booking": "0.0.288"
+  },
+  "resolutions": {
+    "angular": "~1.2.25",
+    "moment": "master",
+    "jquery": "1.11.3"
+  }
+}

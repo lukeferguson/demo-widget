@@ -1,0 +1,48 @@
+    <header>
+
+      <div bb-breadcrumbs class="breadcrumbs_holder" ng-init="setRoute([
+          {page:'map', title: 'Select a store'},
+          {page:'service_list', title: 'Select a service'},
+          {page:'calendar', title: 'Select a date'},
+          {page:'check_items', title: 'Review'},
+          {page:'checkout', title: 'Confirmation'}
+          ])">
+      </div>
+
+       <div progressbar value="bb.percentage_complete" type="primary"></div>
+
+
+      <div class="page-header">
+        <h1>BB Golf Stores</h1>
+      </div>
+
+      <div class="alerts" bb-scroll-to="alert:raised">
+        <div alert ng-repeat="alert in alerts" type="{{alert.type}}">
+          <!-- <h1 class="alert-header" ng-show="alert.title" ng-bind="alert.title"></h1> -->
+          <ul>
+            <li ng-bind-html="alert.msg"></li>
+          </ul>
+        </div>
+      </div>
+  
+   </header>
+
+   <section class="content">
+
+      <div bb-content class="ng-cloak"></div>
+      <div bb-display-mode></div>
+
+      <div bb-loading class="bb-loader" >
+        <div id="loading_icon">
+          <div id="wait_graphic">&nbsp;</div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="hidden-print">
+      <div ng-show="isLoaded" class="powered-by">
+        <span>Bookings powered by <a href="http://www.bookingbug.com" style="text-decoration:none" target="_blank"><span style="color:#087f94">booking</span><span style="color:#88c66f">bug</span></a></span>
+      </div>
+    </footer>
+    

@@ -1,0 +1,73 @@
+<div bb-total ng-show="total" class="confirmation">
+
+  <div class="confirmation-summary-container row">
+
+    <div class="col-sm-offset-2 col-sm-8">
+
+      <div bb-custom-confirmation-text class="confirmation-header">
+        <h1 class="confirmation-heading">Thank you!</h1>
+        <p>Your booking is complete. We have emailed your ticket<span ng-show="total.bookings.length > 1">s.</p>
+        <div ng-repeat="msg in messages" ng-bind-html="msg" class="msg"></div>
+      </div>
+
+      <ul class="confirmation-summary">
+        <li class="row">
+          <div class="col-xs-3">Name</div>
+          <div class="col-xs-9">{{client.name}}</div>
+        </li>
+        <li class="row">
+          <div class="col-xs-3">Email</div>
+          <div class="col-xs-9">{{client.email}}</div>
+        </li>
+        <li class="row">
+          <div class="col-xs-3">Event</div>
+          <div class="col-xs-9">{{total.bookings[0].full_describe}}</div>
+        </li>
+        <li class="row">
+          <div class="col-xs-3">Date &amp; Time</div>
+          <div class="col-xs-9">{{total.bookings[0].datetime | datetime: "dddd Do MMMM YYYY [at] HH:mm":false}}</div>
+        </li>
+        <li class="row" ng-if="total.bookings && total.bookings.length > 1">
+          <div class="col-xs-3">Ticket(s) purchased</div>
+          <div class="col-xs-9">
+            <div ng-repeat="item in total.bookings">{{item.ticket_name}}</div>
+          </div>
+        </li>
+
+<!--         <li class="row">
+          <div class="col-xs-3">Where</div>
+          <div class="col-xs-9">
+            <ul class="address">
+              <li class="address-item">{{bb.company.name}}</li>
+              <li class="address-item" ng-bind-html="bb.company.getAddress() | address_multi_line"></li>
+            </ul>
+          </div>
+        </li> -->
+
+        <li class="row" ng-if="total.total_price != '0.0'">
+          <div class="col-xs-3">Total</div>
+          <div class="col-xs-9">{{total.printed_total_price()}}</div>
+        </li>
+        
+      </ul>
+      <div class="booking-export row hidden-print">
+
+        <!--       
+        <div class="col-sm-6 calendar-export">
+          <span class="calendar-export-label">Add to calendar:</span>
+          <a class="image img_outlook" title="Add this booking to an Outlook Calendar" href="{{total.icalLink()}}"><img alt="" src="https://www.bookingbug.com/assets/outlook.png"></a>
+          <a class="image img_ical" title="Add this booking to an iCal Calendar" href="{{total.webcalLink()}}"><img alt="" src="https://www.bookingbug.com/assets/ical.png"></a>
+          <a class="image img_gcal" title="Add this booking to Google Calendar" href="{{total.gcalLink()}}" target="_blank"><img src="https://www.bookingbug.com/assets/gcal.png" border="0"></a>
+        </div> -->
+
+        <div class="col-sm-12 print">
+          <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

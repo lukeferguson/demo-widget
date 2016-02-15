@@ -1,0 +1,70 @@
+// .btn {
+//   border-radius: 0;
+//   text-transform: uppercase;
+//   min-height: 35px;
+//   border: none;
+// }
+
+// .btn-primary {
+//   color: $white;
+//   background-color: #000;
+//   &:hover, &:active, &:focus {
+//     color: $white;
+//     background-color: $westfield-red;
+//   }
+//   &[disabled] {
+//     background-color: #000;
+//   }
+// }
+
+// .btn-secondary {
+//   color: $white;
+//   background-color: $westfield-red;
+//   &:hover, &:active, &:focus {
+//     color: $white;
+//     background-color: #000;
+//   }
+// }
+
+// .btn-default {
+//   color: #000;
+//   background-color: #DDDDDD;
+//   &:hover, &:active, &:focus {
+//     color: #000;
+//     background-color: #CCCCCC; 
+//   }
+// }
+
+.btn-icon {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  
+  &:active {
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &[disabled] {
+    color: #CCC;
+  }
+}
+
+.button-group{
+  padding-bottom: 45px;
+  padding-top: 15px;
+  .btn {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: auto;
+    }
+  }
+  &.bordered {
+    border-top: 1px solid #DDD;
+    margin-top: 30px;
+  }
+}
+
+

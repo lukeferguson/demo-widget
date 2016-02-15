@@ -1,0 +1,27 @@
+.service-name {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.service-image {
+  margin-bottom: 20px;
+  img {
+    @include center-block();
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.service-description {
+  margin-bottom: 20px;
+}
+
+.service-price {
+  font-size: 2em;
+  text-align: center;
+  .currency-symbol {
+    font-size: 1em;
+  }
+}
