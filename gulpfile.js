@@ -22,8 +22,8 @@ var gulp = require('gulp');
     mainBowerFiles = require('main-bower-files');
     uglify = require('gulp-uglify');
     tap = require('gulp-tap');
-    open = require('gulp-open'); 
-    intercept = require('gulp-intercept');   
+    open = require('gulp-open');
+    intercept = require('gulp-intercept');
 var bower = require('gulp-bower');
     bowerLink = require('gulp-bower-link');
     path = require('path')
@@ -77,7 +77,7 @@ gulp.task('clean-fonts', function(cb) {
 
 
 gulp.task('www', ['clean-html'], function() {
-  return gulp.src(['www/*', 'src/www/*'])               
+  return gulp.src(['www/*', 'src/www/*'])
       .pipe(template(require(config)))
       .pipe(gulp.dest('release'));
 });
@@ -93,8 +93,8 @@ gulp.task('all-javascripts', ['bower-js', 'templates', 'javascripts'], function(
 });
 
 gulp.task('join-js', ['clean-js'], function(cb) {
-  gulp.src('tmpjs/*')   
-    .pipe(concat('booking-widget.js'))    
+  gulp.src('tmpjs/*')
+    .pipe(concat('booking-widget.js'))
     .pipe(gulp.dest('release'));
   cb();
 });
@@ -124,15 +124,15 @@ gulp.task('bower-js', ['bb-assets', 'bower'], function(cb) {
             uglify({mangle: false}))).on('error', gutil.log)
     .pipe(concat('a-booking-bower.js'))
     .pipe(gulp.dest('tmpjs'))
-  gutil.log("done with bower")  
-  cb()  
+  gutil.log("done with bower")
+  cb()
 });
 
 
 gulp.task('templates', [], function(cb) {
   adminTemplates = gulp.src('./src/templates/*.html')
     .pipe(templateCache('x_templates.js', {module: 'BB'}))
-    .pipe(flatten())   
+    .pipe(flatten())
     .pipe(template(require(config)))
     .pipe(gulp.dest('tmpjs'));
   cb()
@@ -146,7 +146,7 @@ gulp.task('images', function() {
 });
 
 function filterStylesheets(path) {
-  if (path.match(new RegExp('.css$')) && 
+  if (path.match(new RegExp('.css$')) &&
      !path.match(new RegExp('bookingbug-angular-public-booking.css$'))){
     return true;
   } else {
@@ -158,7 +158,7 @@ gulp.task('stylesheets', ['clean', 'bower'], function() {
   src = mainBowerFiles({filter: filterStylesheets})
   src.push('src/stylesheets/main.scss')
   return gulp.src(src)
-    .pipe(gulpif(/.*scss$/, sass({errLogToConsole: true})))    
+    .pipe(gulpif(/.*scss$/, sass({errLogToConsole: true})))
     .pipe(template(require(config)))
     .pipe(flatten())
     .pipe(concat('booking-widget.css'))
@@ -185,17 +185,17 @@ gulp.task('get-sdk-version', [], function(cb){
     sdk_version = '"' + argv["sdk-version"] + '"';
   }else if(versions.current){
     sdk_version = '"' + versions.current + '"';
-  };  
+  };
   return cb();
 });
 var update_bower_json = false;
 // Note: gulpif requires a function call to return truthy, and will not work with a var
-function updateBowerJson(){ 
-  return update_bower_json; 
+function updateBowerJson(){
+  return update_bower_json;
 };
 gulp.task('update-bower-json', ['get-sdk-version'], function(){
-  if(sdk_version == ""){   
-    return false;   
+  if(sdk_version == ""){
+    return false;
   };
   // Log SDK version to console?
   gutil.log(gutil.colors.bgMagenta(" SDK Version: ") + " " + gutil.colors.bgMagenta(" " + sdk_version + " "));
@@ -206,40 +206,40 @@ gulp.task('update-bower-json', ['get-sdk-version'], function(){
     // Convert file contents of bower.json to String so we can apply String methods for pattern matching and replace
     var bower_json_file = f.contents.toString();
     // Strip out bookingbug dependency JSON objects
-    var submodule_pattern = /"bookingbug-angular-[^}\n\r,]+/g // Do NOT include newline, carriage return or } or , in the match! 
+    var submodule_pattern = /"bookingbug-angular-[^}\n\r,]+/g // Do NOT include newline, carriage return or } or , in the match!
     var version_pattern =  /:\s{0,1}"[^}\n\r,]+/ // Do NOT include newline, carriage return or } or , in the match!
     // Store matches to Array
-    var matches = bower_json_file.match(submodule_pattern);   
-    var replacements = {}; 
+    var matches = bower_json_file.match(submodule_pattern);
+    var replacements = {};
     for(var i in matches){
-      // Replace version in matches with current SDK version ONLY IF they are different     
-      if(matches[i].indexOf(sdk_version) == -1){      
+      // Replace version in matches with current SDK version ONLY IF they are different
+      if(matches[i].indexOf(sdk_version) == -1){
         replacements[i] = matches[i].replace(version_pattern, ": " + sdk_version);
-      };   
-    };  
+      };
+    };
     for(var i in replacements){
        // Build new bower.json file...
       bower_json_file = bower_json_file.replace(matches[i], replacements[i]);
       // Log changes to console?
-      gutil.log(gutil.colors.bgYellow.black(" " + path.basename(f.path) + " updating >>> ") + " " + matches[i] + " to " + replacements[i]);      
+      gutil.log(gutil.colors.bgYellow.black(" " + path.basename(f.path) + " updating >>> ") + " " + matches[i] + " to " + replacements[i]);
     };
     // Do NOT update bower.json if all bookingbug-angular-* versions match current SDK version or --sdk-version
     if(Object.keys(replacements).length > 0){
-      update_bower_json = true;     
+      update_bower_json = true;
     };
     // Set the file contents to Convert the bower_json_file String to binary using Buffer
     // and overwrite the file contents obtained from bower.json with the new data
-    if(update_bower_json){      
+    if(update_bower_json){
       f.contents = new Buffer(bower_json_file);
     }else{
       // bower.json will NOT be updated
-      gutil.log(gutil.colors.bgYellow.black(" " + path.basename(f.path) + " >>> ") + " is already up-to-date with SDK version " + sdk_version);     
+      gutil.log(gutil.colors.bgYellow.black(" " + path.basename(f.path) + " >>> ") + " is already up-to-date with SDK version " + sdk_version);
     };
     return f;
   }))
   // Read the updated file contents into bower.json, then overwrite the current bower.json
   .pipe(gulpif(updateBowerJson, concat('bower.json')))
-  .pipe(gulpif(updateBowerJson, gulp.dest('./'))); 
+  .pipe(gulpif(updateBowerJson, gulp.dest('./')));
 });
 // =========================================================================
 // Update bookingbug-angular-* dependency versions in bower.json - END
@@ -249,7 +249,7 @@ gulp.task('update-bower-json', ['get-sdk-version'], function(){
 // Auto-Reload Browser - START
 // ===================================
 var html_files_in_www_folder = [];
-var last_html_file_in_www_folder = null; 
+var last_html_file_in_www_folder = null;
 gulp.task('html-files-in-www-folder', [], function(cb){
   gulp.src('src/www/*')
   .pipe(tap(function(file, t){
@@ -257,7 +257,7 @@ gulp.task('html-files-in-www-folder', [], function(cb){
     // This allows us to later watch for changes to the LAST file in the "release" folder
     // instead of hard-coding the watch to reference the last file at time of adding
     // this function, which happens to be "view_booking_admin.html"
-    html_files_in_www_folder.push(path.basename(file.path))    
+    html_files_in_www_folder.push(path.basename(file.path))
   }));
   cb();
 });
@@ -281,23 +281,23 @@ gulp.task('reloadJS', [], function(){
       printNewFeatures();
     };
     task_completed = new Date().getTime();
-    var task_time = task_completed - task_started;   
+    var task_time = task_completed - task_started;
     if(task_time > max_task_time * 10){
       max_task_time = task_time * 10;
-    };   
-  });  
+    };
+  });
  });
 
-gulp.task('reloadHTML', [], function(){ 
+gulp.task('reloadHTML', [], function(){
   gulp.src('release/' + last_html_file_in_www_folder)
-  .pipe(connect.reload());  
+  .pipe(connect.reload());
 });
 
 function changeEventHandler(e){
   // Timeout is here so that the changed log prints after all tasks have completed =D
-  setTimeout(function(){    
+  setTimeout(function(){
     gutil.log(gutil.colors.bgYellow.black(e.type + ":") + " " + gutil.colors.bgMagenta.white(path.basename(e.path)) + " " + gutil.colors.gray('"' + e.path + '"'));
-  }, max_task_time);  
+  }, max_task_time);
 };
 // ===================================
 // Auto-reload Browser - END
@@ -324,7 +324,7 @@ gulp.task('watch', ['assets'], function() {
   })
   gulp.watch(['./src/javascripts/**'], ['javascripts']).on('error', errorHandler).on('change', function(e){
     changeEventHandler(e)
-  }) 
+  })
   gulp.watch(['./tmpjs/*'], ['join-js']).on('error', errorHandler).on('change', function(e){
     changeEventHandler(e)
   })
@@ -358,7 +358,7 @@ function projectName() {
 
 gulp.task('publish', ['assets'], function() {
   var publisher = awspublish.create({
-    key: process.env.AWS_ACCESS_KEY_ID, 
+    key: process.env.AWS_ACCESS_KEY_ID,
     secret: process.env.AWS_SECRET_ACCESS_KEY,
     bucket: 'bespoke.bookingbug.com',
     region: 'eu-west-1'
@@ -474,7 +474,7 @@ var openBrowser = function(){
 
 // Print new Gulp features circa 20-10-2015 18:44 GMT
 var printNewFeatures = function(){
-    gutil.log(gutil.colors.bgGreen.white(" Gulp ") + " now running in " + gutil.colors.bgRed.white(" EUF ") + " mode..."); // [E]xtreme [U]ser [F]riendliness  
+    gutil.log(gutil.colors.bgGreen.white(" Gulp ") + " now running in " + gutil.colors.bgRed.white(" EUF ") + " mode..."); // [E]xtreme [U]ser [F]riendliness
     gutil.log(gutil.colors.gray("*Extreme User Friendliness"));
     gutil.log(gutil.colors.gray("Oh boy oh boy oh boy, Gulp now watches for changes in the \"release\" folder and reloads the browser for you!"));
     gutil.log(gutil.colors.gray("Oh wow wow wow, console now logs file paths for the majority of file changes."));
