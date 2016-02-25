@@ -18,6 +18,8 @@
   "resolutions": {
     "angular": "~1.2.25",
     "moment": "master",
-    "jquery": "1.11.3"
+    "jquery": "1.11.3",
+    "angular-bootstrap": "9d4bddba44e7fdac45317c505e68804369028b38",
+    "fullcalendar": "2.3.2"
   }
 }
