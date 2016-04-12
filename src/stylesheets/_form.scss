@@ -2,6 +2,10 @@
   @include placeholder(#CCC);
 }
 
+.booking-form-header {
+  padding-bottom: 10px;
+}
+
 .bb-question-heading {
   @include make-sm-column(8);
   @include make-sm-column-offset(2);

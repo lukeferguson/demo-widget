@@ -27,3 +27,15 @@
     }
   }
 }
+
+.bb-summary-list {
+  margin-bottom: 40px;
+  text-align: center;
+  .bb-summary-label, .bb-summary-value {
+    display: inline-block;
+  }
+
+  .bb-confirmation-summary-item {
+    margin-top: 5px;
+  }
+}

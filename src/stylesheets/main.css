@@ -698,7 +698,6 @@
 
 #bb h1, #bb h2, #bb h3, #bb h4, #bb h5, #bb h6,
 #bb .h1, #bb .h2, #bb .h3, #bb .h4, #bb .h5, #bb .h6 {
-  font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }

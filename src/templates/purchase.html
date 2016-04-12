@@ -6,10 +6,12 @@
 
       <div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
 
-        <div ng-if="purchase && bookings.length == 0">
+        <div ng-if="purchase && bookings.length == 0" class ="cancel-confirmation">
           <div class="confirmation-header">
             <h2 class="confirmation-heading">Your booking has been cancelled</h2>
           </div>
+
+          <span class ="glyphicon glyphicon-ok"></span>
         </div>
 
         <div ng-if="bookings">

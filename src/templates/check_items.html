@@ -1,28 +1,9 @@
 <div bb-page>
 
+  <h3 class ="page-sub-heading">Please enter your details to complete your booking.</h3>
   <div class="page-summary">
-    <p>Please enter your details to complete your booking.</p>
-
-    <div bb-custom-booking-text class="bb-custom-booking-text text-block">
-      <p ng-repeat="msg in messages" ng-bind-html="msg"></p>
+    <div bb-include="_basket_item_summary">
     </div>
-
-    <ul class="summary-list">
-      <li class="row">
-        <div class="col-xs-2 col-sm-1 summary-label">Service:</div>
-        <div class="col-xs-6 col-sm-4 summary-value"><span class="bold-small">{{bb.current_item.service.name}} at {{company.name}}</span></div>
-      </li>
-      <li ng-show="bb.current_item.service.price" class="row">
-        <div class="col-xs-2 col-sm-1 summary-label">Price:</div>
-        <div class="col-xs-6 col-sm-4  summary-value"><span class="bold-small">{{bb.current_item.service.price | pretty_price:'£'}}</span></div>
-      </li>
-      <li class="row">
-        <div class="col-xs-2 col-sm-1 summary-label">Date:</div>
-        <div class="col-xs-6 col-sm-4 summary-value">
-          <span class="bold-small">{{bb.current_item.start_datetime() | datetime: 'dddd D MMMM' : false}}</span> - {{bb.current_item.start_datetime() | datetime: 'h[.]mma' : false}}
-        </div>
-      </li>
-    </ul>
   </div>
 
 

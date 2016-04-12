@@ -1,0 +1,39 @@
+<ul class="bb-summary-list col-xs-12">
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.service">
+    <div class="bb-summary-label">Service:
+    </div>
+    <div class="bb-summary-value"><span>{{bb.current_item.service.name}}</span>
+    </div>
+  </li>
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.resource && bb.current_item.resource != true">
+    <div class="bb-summary-label">Resource:
+    </div>
+    <div class="bb-summary-value bb-summary-value"><span>{{bb.current_item.resource.name}}</span>
+    </div>
+  </li>
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.person && bb.current_item.person != true">
+    <div class="bb-summary-label">Person:
+    </div>
+    <div class="bb-summary-value"><span>{{bb.current_item.person.name}}</span>
+    </div>   
+  </li>
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.price">
+    <div class="bb-summary-label">Price:
+    </div>
+    <div class="bb-summary-value"><span>{{bb.current_item.price | currency}}</span>
+    </div>
+  </li>
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.date">
+    <div class="bb-summary-label">Time:
+    </div>
+    <div class="bb-summary-value"><span>{{bb.current_item.date.date | datetime: 'dddd, MMMM Do YYYY, h:mm a'}}</span>
+    </div>
+  </li>
+
+  <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.duration">
+    <div class="bb-summary-label">Duration:
+    </div>
+    <div class="bb-summary-value"><span>{{bb.current_item.duration | time_period}}</span>
+    </div>
+  </li>
+</ul>
