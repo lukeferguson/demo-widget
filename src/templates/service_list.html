@@ -15,7 +15,7 @@
           {{item.description}}
         </div>
         <div class="col-sm-2 col-xs-3 service-price">
-          <span class="currency-symbol">£</span>{{item.price}}
+          {{item.price | pretty_price}}
         </div>
       </div>
       <div class="row">

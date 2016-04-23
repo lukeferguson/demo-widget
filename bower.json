@@ -20,6 +20,7 @@
     "moment": "master",
     "jquery": "1.11.3",
     "angular-bootstrap": "9d4bddba44e7fdac45317c505e68804369028b38",
-    "fullcalendar": "2.3.2"
+    "fullcalendar": "2.3.2",
+    "components-font-awesome": "~4.5"
   }
 }

@@ -43,7 +43,7 @@
 
           <p><strong>{{currentMarker.company.name}}</strong></p>
           <p>{{currentMarker.company.address | address_single_line}}</p>
-          <p><strong>Phone:</strong> {{currentMarker.company.address.phone | uk_local_number}}</p>
+          <p><strong>Phone:</strong> {{currentMarker.company.address.phone | local_phone_number}}</p>
           <p>
             <span ng-if="currentMarker.company.extra.closing_time"><strong>{{currentMarker.company.extra.closing_time}}</strong></span>
             <span class="distance">{{roundNumberUp(currentMarker.distance,1)}}mi</span>
@@ -66,7 +66,7 @@
 
             <ul class="store-details" ng-click="openMarkerInfo(marker)">
               <li>{{marker.company.address | address_single_line }}</li>
-              <li><strong>Phone:</strong> {{marker.company.address.phone | uk_local_number}}</li>
+              <li><strong>Phone:</strong> {{marker.company.address.phone | local_phone_number}}</li>
               <li>
                 <span class="distance">{{roundNumberUp(marker.distance,1)}}mi</span>
               </li>
