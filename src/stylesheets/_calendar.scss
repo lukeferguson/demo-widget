@@ -120,8 +120,7 @@
     display: block;
     text-transform: uppercase;
     margin-bottom: 10px;
-    font-size: 9px; 
-    font-size: 0.9rem;
+    font-size: $font-size-small;
   }
 
   // .selected-time {
