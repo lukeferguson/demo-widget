@@ -26,7 +26,7 @@
   <li class="row bb-confirmation-summary-item" ng-show="bb.current_item.date">
     <div class="bb-summary-label">Time:
     </div>
-    <div class="bb-summary-value"><span>{{bb.current_item.date.date | datetime: 'dddd, MMMM Do YYYY, h:mm a'}}</span>
+    <div class="bb-summary-value"><span>{{bb.current_item.startDatetime() | datetime: 'dddd, MMMM Do YYYY, h:mm a'}}</span>
     </div>
   </li>
 
