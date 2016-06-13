@@ -13,10 +13,13 @@
     "tests"
   ],
   "dependencies": {
-    "bookingbug-angular-public-booking": "0.0.288"
-  },
+    "bookingbug-angular-public-booking": "1.1.30",
+    "angular": "1.3",
+    "angular-animate": "1.3"
+  }, 
   "resolutions": {
     "angular": "1.3",
+    "angular-animate": "1.3",
     "moment": "master",
     "jquery": "1.11.3",
     "angular-bootstrap": "9d4bddba44e7fdac45317c505e68804369028b38",

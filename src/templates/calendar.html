@@ -152,16 +152,16 @@
           <!-- if time list has slots -->
           <div accordion close-others="false">
 
-            <!-- MORNING TIME RANGE -->
-            <div bb-accordian-range-group="{heading: 'Morning', range: [0, 720], slots: day.slots, collaspe_when_time_selected: true}" ng-init="setFormDataStoreId($index)" class="accordian-group">
+            <!-- MORNING TIME RANGE -->  
+            <div bb-accordion-range-group="{heading: 'Morning', range: [0, 720], collaspe_when_time_selected: true}" day="selected_day" slots="slots" select-slot="highlightSlot"ng-init="setFormDataStoreId($index)" class="accordion-group">
             </div>
 
             <!-- AFTERNOON TIME RANGE -->
-            <div bb-accordian-range-group="{heading: 'Afternoon', range: [720, 1020], slots: day.slots, collaspe_when_time_selected: true}" ng-init="setFormDataStoreId($index)" class="accordian-group">
+            <div bb-accordion-range-group="{heading: 'Afternoon', range: [720, 1020],collaspe_when_time_selected: true}" day="selected_day" slots="slots" select-slot="highlightSlot" ng-init="setFormDataStoreId($index)" class="accordion-group">
             </div>
 
             <!-- EVENING TIME RANGE -->
-            <div bb-accordian-range-group="{heading: 'Evening', range: [1020, 1440], slots: day.slots, collaspe_when_time_selected: true}" ng-init="setFormDataStoreId($index)" class="accordian-group">
+            <div bb-accordion-range-group="{heading: 'Evening', range: [1020, 1440], collaspe_when_time_selected: true}" day="selected_day" slots="slots" select-slot="highlightSlot" ng-init="setFormDataStoreId($index)" class="accordion-group">
             </div>
 
           </div>
