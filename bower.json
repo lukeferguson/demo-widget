@@ -13,7 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "bookingbug-angular-public-booking": "1.2.0",
+    "bookingbug-angular-public-booking": "1.2.2",
     "angular": "1.3",
     "angular-animate": "1.3"
   },
@@ -28,15 +28,15 @@
     "angular-translate": "~2.7.2",
     "angular-translate-storage-cookie": "~2.7.2",
     "angular-translate-loader-partial": "~2.7.2",
-    "bookingbug-angular-core": "1.2.0",
-    "bookingbug-angular-admin": "1.2.0"
+    "bookingbug-angular-core": "1.2.2",
+    "bookingbug-angular-admin": "1.2.2"
   },
   "overrides": {
     "lodash": {
       "ignore": true
     },
     "bootstrap-sass-official": {
-     "ignore": true
+      "ignore": true
     },
     "bootstrap-sass": {
       "main": [
