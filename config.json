@@ -1,5 +1,17 @@
 {
-  "company_id": "41285",
-  "api_url": "https://uk.bookingbug.com",
-  "assets_url": "https://bespoke.bookingbug.com/project_template"
+  "production": {
+    "company_id": "41285",
+    "api_url": "https://uk.bookingbug.com",
+    "assets_url": "https://bespoke.bookingbug.com/project_template"
+  },
+  "development": {
+    "company_id": "41284",
+    "api_url": "https://uk.bookingbug.com",
+    "assets_url": "http://localhost:8000"
+  },
+  "staging": {
+    "company_id": "41284",
+    "api_url": "https://uk.bookingbug.com",
+    "assets_url": "https://bespoke.bookingbug.com/demo/staging"
+  }
 }
