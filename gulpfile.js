@@ -416,7 +416,7 @@ gulp.task('images', function() {
 
 function filterStylesheets(path) {
   return (
-    path.match(new RegExp('.css$'))
+    path.indexOf('.css') !== -1
     // Temporary exclude the compiled booking bug css files if they exist
     // until the new build process (as discussed) allows for their generation
     &&
