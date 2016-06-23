@@ -420,9 +420,7 @@ function filterStylesheets(path) {
     // Temporary exclude the compiled booking bug css files if they exist
     // until the new build process (as discussed) allows for their generation
     &&
-    !path.match(new RegExp('(bower_components\/bookingbug-angular-).+(\.css)'))
-    &&
-    path.indexOf('boostrap.') !== -1
+    !path.match(new RegExp('(bookingbug-angular-).+(\.css)'))
   );
 }
 
