@@ -4,22 +4,15 @@
 
   <div bb-breadcrumbs ng-init="setRoute([
     {page:'map', title: 'Select a store'},
-    {page:'service_list', title: 'Select a service'},
-    {page:'calendar', title: 'Select a date'},
-    {page:'check_items', title: 'Review'},
-    {page:'checkout', title: 'Confirmation'}
+    {page:'deal_list'},
+    {page:'basket'},
+    {page:'checkout_deal'},
+    {page:'confirmation'}
     ])">
   </div>
 
-  <div progressbar value="bb.percentage_complete" type="primary"></div>
-
-  <div class="page-header">
-    <h1>BB Golf Stores</h1>
-  </div>
-
-  <div class="alerts" bb-scroll-to="alert:raised">
-    <div alert ng-repeat="alert in alerts" type="{{alert.type}}">
-      <!-- <h1 class="alert-header" ng-show="alert.title" ng-bind="alert.title"></h1> -->
+  <div class="alerts" bb-scroll-to="alert:raised" bb-always-scroll>
+    <div alert ng-repeat="alert in $root.alerts" type="{{alert.type}}" >
       <ul>
         <li ng-bind-html="alert.msg"></li>
       </ul>
@@ -46,4 +39,3 @@
     <span>Bookings powered by <a href="//www.bookingbug.com" style="text-decoration:none" target="_blank"><span style="color:#087f94">booking</span><span style="color:#88c66f">bug</span></a></span>
   </div>
 </div>
-
