@@ -8,7 +8,8 @@
         <ul class="event-summary-list">
           <li class="date-time">
             <span class="bb-icon icon-calendar"></span>
-            <span>{{event.date.format('dddd Do MMMM YYYY')}} at <span class="event-time">{{event.date.format('HH:mm')}}</span></span>
+            <span>{{event.date | datetime: 'dddd Do MMMM YYYY'}} at 
+            <span class="event-time">{{event.date | datetime: 'time': true}}</span></span>
           </li>
           <li class="location" ng-show="event.chain.address">
             <span class="bb-icon icon-location"></span>
