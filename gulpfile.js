@@ -386,6 +386,20 @@ gulp.task('i18n', languagesFiles);
 
 gulp.task('bower-js', ['bb-assets', 'bower'], function() {
   src = mainBowerFiles({filter: new RegExp('.js$')})
+
+  // find admin booking and move to end of file list so that these
+  // templates override those from public booking
+  for (var i = 0; i < src.length; i++) {
+    if (src[i].match(/bookingbug-angular-admin-booking-templates.js$/)){
+      admin_booking_templates = src.splice(i, 1)
+      src.push(admin_booking_templates[0]);
+    }
+    if (src[i].match(/bookingbug-angular-admin-booking.css$/)){
+      admin_booking_css = src.splice(i, 1)
+      src.push(admin_booking_css[0]);
+    }
+  }
+
   return gulp.src(src)
     .pipe(plumber())
     .pipe(gulpif(/.*coffee$/, coffee().on('error', function(e) {
