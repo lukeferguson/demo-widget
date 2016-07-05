@@ -22,21 +22,21 @@
           <ul class="confirmation-summary">
             <li class="row confirmation-summary-item">
               <div class="col-sm-3 bb-summary-label">Reference:</div>
-              <div class="col-sm-9 bb-summary-value"><span class='fa fa-caret-right'></span>   {{ total.id }}</div>
+              <div class="col-sm-9 bb-summary-value">{{ total.id }}</div>
             </li>
           </ul>
           <ul class="confirmation-summary" ng-repeat="i in total.items">
             <li ng-if="i.full_describe" class="row confirmation-summary-item">
               <div class="col-sm-3 bb-summary-label">Service:</div>
-              <div class="col-sm-9 bb-summary-value"><span class='fa fa-caret-right'></span>   {{ i.full_describe }}</div>
+              <div class="col-sm-9 bb-summary-value">{{ i.full_describe }}</div>
             </li>
             <li ng-if="i.describe" class="row confirmation-summary-item">
               <div class="col-sm-3 bb-summary-label">Date/Time:</div>
-              <div class="col-sm-9 bb-summary-value"><span class='fa fa-caret-right'></span>   {{ i.describe }}</div>
+              <div class="col-sm-9 bb-summary-value">{{i.datetime | datetime: 'datetime'}}</div>
             </li>
             <li ng-if="i.price" class="row confirmation-summary-item">
               <div class="col-sm-3 bb-summary-label">Price:</div>
-              <div class="col-sm-9 bb-summary-value"><span class='fa fa-caret-right'></span>   {{ i.price | currency }}</div>
+              <div class="col-sm-9 bb-summary-value">{{ i.price | currency }}</div>
             </li>
           </ul>
           <ul ng-show="total.items[0].address.lat" class="confirmation-summary">
