@@ -34,7 +34,8 @@
     "angular-translate-loader-partial": "~2.7.2",
     "bookingbug-angular-core": "1.2.2",
     "bookingbug-angular-admin": "1.2.2",
-    "moment-timezone": "~0.5.4"
+    "moment-timezone": "~0.5.4",
+    "ng-file-upload": null
   },
   "overrides": {
     "lodash": {
