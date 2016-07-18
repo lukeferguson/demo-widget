@@ -3,7 +3,7 @@
   {
     "name": "development config",
     "company_id": "41284",    
-    "api_url": "https://dev02.bookingbug.com",
+    "api_url": "https://uk.bookingbug.com",
     "assets_url": "http://localhost:8000",
     "description": "for testing and deploying to development server"
   },
