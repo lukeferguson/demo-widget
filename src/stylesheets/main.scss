@@ -1,3 +1,7 @@
+// Font awesome
+$fa-font-path: "fonts";
+@import "../../bower_components/fontawesome/scss/font-awesome";
+
 #bb {
   @import "bootstrap-variables";
   @import "bb-variables";
