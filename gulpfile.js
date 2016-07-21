@@ -65,6 +65,7 @@ gulp.task('config-set', function(){
           }else{
              config = require('./config.json')['staging'];
           }
+          config.googlemaps_api_key = require('./config.json')['googlemaps_api_key'];
         });
 });
 

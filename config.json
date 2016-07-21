@@ -22,5 +22,6 @@
     "api_url": "https://uk.bookingbug.com",
     "assets_url": "https://bespoke.bookingbug.com/demo",
     "description": "for deploying to production server"
-  }
+  },
+  "googlemaps_api_key": ""
 }
