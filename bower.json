@@ -55,6 +55,12 @@
     },
     "bootstrap": {
       "ignore": true
+    },
+    "moment": {
+      "main": [
+        "moment.js",
+        "locale/en-gb.js"
+      ]
     }
   }
 }
