@@ -451,17 +451,19 @@ gulp.task('stylesheets', ['clean', 'bower', 'config-set'], function() {
 
   bootstrapSCSS = gulp.src('src/stylesheets/bootstrap.scss')
     .pipe(sourcemaps.init())
+    .pipe(template(config))
+    .pipe(template({project_name: projectName()}))
     .pipe(sass({onError: function(e) { console.log(e); }, outputStyle: 'compressed'}).on('error', gutil.log));
   appSCSS = gulp.src('src/stylesheets/main.scss')
     .pipe(sourcemaps.init())
+    .pipe(template(config))
+    .pipe(template({project_name: projectName()}))
     .pipe(sass({onError: function(e) { console.log(e); }, outputStyle: 'compressed'}).on('error', gutil.log));
   dependenciesCSS = gulp.src(src)
     .pipe(sourcemaps.init())
 
   return streamqueue({objectMode: true }, bootstrapSCSS, dependenciesCSS, appSCSS)
     .pipe(plumber())
-    .pipe(template(config))
-    .pipe(template({project_name: projectName()}))
     .pipe(flatten())
     .pipe(concat('booking-widget.css'))
     .pipe(cssSelectorLimit.reporter('fail'))
