@@ -43,7 +43,7 @@
             <li class="row confirmation-summary-item">
               <div class="col-sm-12">
                 <div bb-address-map="total.items[0].address">
-                  <ui-gmap-google-map center='map.center' zoom='map.zoom' options="options">
+                  <ui-gmap-google-map ng-if='map.center' center='map.center' zoom='map.zoom' options="options">
                     <ui-gmap-marker coords="marker.coords" idkey="marker.id">
                     </ui-gmap-marker>
                   </ui-gmap-google-map>
